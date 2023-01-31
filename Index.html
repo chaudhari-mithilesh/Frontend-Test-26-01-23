@@ -21,17 +21,17 @@
         <form action="#">
           <div class="group">
             <div class="title">Amount</div>
-            <input type="text" class="laon-amount" value="20000" />
+            <input type="text" class="loan-amount" value="20000" placeholder="0" />
           </div>
 
           <div class="group">
             <div class="title">Interest Rate</div>
-            <input type="text" class="interst-rate" value="7.5" />
+            <input type="text" class="interest-rate" value="7.5" placeholder="0" />
           </div>
 
           <div class="group">
             <div class="title">Tenure (In Months)</div>
-            <input type="text" class="laon-tenure" value="20000" />
+            <input type="text" class="loan-tenure" value="120" placeholder="0" />
           </div>
         </form>
       </div>
@@ -39,25 +39,33 @@
         <div class="left">
           <div class="loan-emi">
             <h3>Loan EMI</h3>
-            <div class="value">123</div>
+            <div class="value">123/div>
           </div>
 
-          <div class="total-inerest">
-            <h3>Toatal Interest Payable</h3>
+          <div class="total-interest">
+            <h3>Total Interest Payable</h3>
             <div class="value">1234</div>
           </div>
 
           <div class="total-amount">
-            <h3>Toatal Amount</h3>
-            <div class="value">123456</div>
+            <h3>Total Amount</h3>
+            <div class="value">12345</div>
           </div>
 
           <button class="calculate-btn">Calculate</button>
         </div>
-
-        <div class="right">Chart</div>
+      </div>
+      <div class="right">
+        <canvas id="myChart" width="400" height="400"></canvas>
       </div>
     </div>
+
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/chart.js/dist/chart.umd.min.js"
+    ></script>
+
+    <script src="path/to/chartjs/dist/chart.umd.js"></script>
 
     <script src="main.js"></script>
     <!-- <script

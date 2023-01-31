@@ -56,6 +56,7 @@
 }
 
 .loan-calculator .result .left {
+  /* border: 5px solid red; */
   width: 100%;
   padding: 8px 32px;
 }
@@ -91,6 +92,11 @@
   font-weight: 900;
   cursor: pointer;
   margin: 24px 0;
+}
+
+.loan-calculator .right {
+  /* border: 5px solid red; */
+  width: 50%;
 }
 
 @media (max-width: 650px) {
