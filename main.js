@@ -46,7 +46,7 @@ const checkValues = () => {
   }
 
   if (!interestRateValue.match(regexDecimalNumber)) {
-    nterestRateInput.value = 7.5;
+    interestRateInput.value = 7.5;
   }
 };
 
