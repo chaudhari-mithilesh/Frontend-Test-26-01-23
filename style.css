@@ -212,6 +212,11 @@ a {
   text-decoration: none;
 }
 
+footer .social-media button {
+  background: none;
+  border: none;
+}
+
 @media (max-width: 650px) {
   .header .navbar {
     height: auto;
@@ -261,7 +266,20 @@ a {
     width: 60%;
   }
 
+  footer .container {
+    padding: 25px;
+  }
+
   footer .container .link {
     text-align: center;
+  }
+
+  footer .social-media button img {
+    width: 32px;
+    height: 32px;
+  }
+
+  footer .copyright {
+    padding: 25px;
   }
 }

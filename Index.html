@@ -11,19 +11,20 @@
       integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
       crossorigin="anonymous"
     /> -->
-    <title>Document</title>
+    <title>Loanscan</title>
+    <link rel="shortcut icon" href="/Images/Icon2.png">
   </head>
   <body>
-    <section class="header">
+    <section class="header" id="home">
       <div class="navbar">
         <nav>
           <div class="heading">
             <h1>Loanscan</h1>
           </div>
           <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Products</a></li>
-            <li><a href="#">Contact Us</a></li>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#calc">Products</a></li>
+            <li><a href="#foot">Contact Us</a></li>
           </ul>
         </nav>
       </div>
@@ -38,7 +39,7 @@
 
     <div class="tryit"><p>Try it For Yourself</p></div>
 
-    <section class="loan-calculator">
+    <section class="loan-calculator" id="calc">
       <div class="top">
         <h2>Loan Calculator</h2>
 
@@ -84,26 +85,28 @@
       </div>
     </section>
 
-    <footer>
-      <div class="container">
-        <div class="address">
-          <h3>Pune Headqurters</h1>
-          <p>
+    <section id="foot">
+      <footer>
+        <div class="container">
+          <div class="address">
+            <h3>Pune Headqurters</h1>
+            <p>
             201, ABC Avenue,
             Kothrud, Pune, 411038
             Ph No - 02057857934
-          </p>
+            </p>
+          </div>
+          <div class="link"><a href="#home">Home</a></div>
+          <div class="social-media">
+            <h3>Follow Us for More</h3>
+            <button><img src="/Images/icons8-instagram-48.png" alt="Insta"></button>
+            <button><img src="/Images/icons8-twitter-48.png" alt="Twitter"></button>
+            <button><img src="/Images/icons8-youtube-48.png" alt="YT"></button>
+          </div>
         </div>
-        <div class="link"><a href="#">Contact Us</a></div>
-        <div class="social-media">
-          <h3>Follow Us for More</h3>
-          <button>Insta</button>
-          <button>Twitter</button>
-          <button>YT</button>
-        </div>
-      </div>
-      <div class="copyright"><p>@2023 Loanscan All rights reserved</p></div>
-    </footer>
+        <div class="copyright"><p>@2023 Loanscan All rights reserved</p></div>
+      </footer>
+    </section>
 
     <script
       type="text/javascript"
