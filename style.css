@@ -1,16 +1,18 @@
-/* * {
+* {
   margin: 0;
   padding: 0;
-  font-family: "Roboto", sans-serif;
-} */
+  font-family: "Poppins", sans-serif;
+}
 
 /* html {
   font-size: 62.5%;
 } */
 
 .header .navbar {
+  height: 120px;
   width: 100%;
   background: #e63946;
+  text-align: center;
 }
 
 .header .navbar nav {
@@ -20,10 +22,6 @@
   justify-content: space-between;
 }
 
-.header .navbar .heading {
-  /* height: 75%; */
-  /* background: #fff; */
-}
 .header .navbar h1 {
   /* border: 5px solid black; */
   font-size: 42px;
@@ -35,7 +33,7 @@
 }
 
 .header .navbar ul {
-  width: 25%;
+  width: 50%;
   /* border: 5px solid black; */
   list-style: none;
   display: flex;
@@ -49,16 +47,38 @@
   color: #fff;
 }
 
-.header .navbar nav ul li {
-  /* border: 5px solid black; */
-  /* justify-self: center; */
+.hero {
+  height: 100vh;
+  background: url("/Images/Hero.jpg");
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  /* flex-wrap: wrap; */
+}
+
+.hero .hero-title {
+  font-size: 42px;
+  width: 50%;
+  text-align: left;
+  margin-left: 100px;
+}
+
+.hero .hero-subtext {
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 24px;
+
+  width: 50%;
+  /* text-align: left; */
+  margin-left: 100px;
 }
 
 .loan-calculator {
   font-family: "Roboto", sans-serif;
   width: 600px;
   margin: 2.4rem auto;
-  background-color: #fff;
+  background-color: whitesmoke;
   box-shadow: 0 12px 50px -11px rgba(0, 0, 0, 0.2);
   border-radius: 8px;
   color: #14213d;
@@ -159,5 +179,26 @@
   .loan-calculator .result {
     flex-direction: column;
     text-align: center;
+  }
+
+  .hero {
+    width: fit-content;
+    height: auto;
+    padding: 20px;
+    background: url(/Images/—Pngtree—bank\ guarantee\ poster\ background\ material_1036339.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  .hero .hero-title {
+    font-size: 38px;
+    margin-bottom: 20px;
+    width: 60%;
+    text-align: left;
+  }
+
+  .hero .hero-subtext {
+    font-size: 20pxpx;
+    width: 60%;
   }
 }
