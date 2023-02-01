@@ -16,6 +16,7 @@
 }
 
 .header .navbar nav {
+  padding-top: 20px;
   /* border: 5px solid black; */
   display: flex;
   align-items: center;
@@ -72,6 +73,12 @@
   width: 50%;
   /* text-align: left; */
   margin-left: 100px;
+}
+
+.tryit {
+  margin-top: 20px;
+  width: 100%;
+  text-align: center;
 }
 
 .loan-calculator {
@@ -165,7 +172,59 @@
   width: 50%;
 }
 
+footer {
+  color: #fff;
+  min-height: 200px;
+  background: #e63946;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+footer .container {
+  display: flex;
+  justify-content: space-between;
+}
+
+footer .container h3 {
+  margin-bottom: 30px;
+}
+
+footer .container .address {
+  max-width: 45%;
+  display: flex;
+  flex-direction: column;
+  align-content: space-between;
+}
+
+footer .container .address p {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+footer .container .link {
+  margin-right: 10%;
+}
+
+a {
+  color: #fff;
+  text-decoration: none;
+}
+
 @media (max-width: 650px) {
+  .header .navbar {
+    height: auto;
+  }
+  .header .navbar nav {
+    padding: 25px;
+    flex-direction: column;
+  }
+
+  .header .navbar nav ul {
+    flex-direction: column;
+  }
+
   .loan-calculator {
     width: 90%;
     max-width: 500px;
@@ -200,5 +259,9 @@
   .hero .hero-subtext {
     font-size: 20pxpx;
     width: 60%;
+  }
+
+  footer .container .link {
+    text-align: center;
   }
 }
