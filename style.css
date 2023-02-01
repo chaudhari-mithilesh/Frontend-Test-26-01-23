@@ -8,6 +8,52 @@
   font-size: 62.5%;
 } */
 
+.header .navbar {
+  width: 100%;
+  background: #e63946;
+}
+
+.header .navbar nav {
+  /* border: 5px solid black; */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header .navbar .heading {
+  /* height: 75%; */
+  /* background: #fff; */
+}
+.header .navbar h1 {
+  /* border: 5px solid black; */
+  font-size: 42px;
+  font-weight: 900;
+  background-color: #fff;
+  color: #e63946;
+
+  margin-left: 40px;
+}
+
+.header .navbar ul {
+  width: 25%;
+  /* border: 5px solid black; */
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+
+  padding: 20px;
+
+  font-size: 24px;
+  font-weight: 900;
+  color: #fff;
+}
+
+.header .navbar nav ul li {
+  /* border: 5px solid black; */
+  /* justify-self: center; */
+}
+
 .loan-calculator {
   font-family: "Roboto", sans-serif;
   width: 600px;
