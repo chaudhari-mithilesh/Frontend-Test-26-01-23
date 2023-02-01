@@ -243,6 +243,7 @@ footer .social-media button {
   .loan-calculator .result {
     flex-direction: column;
     text-align: center;
+    padding-bottom: 20px;
   }
 
   .hero {
