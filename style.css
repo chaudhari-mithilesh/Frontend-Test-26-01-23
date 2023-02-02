@@ -1,12 +1,12 @@
+/* Universal Margin and Padding reset */
+
 * {
   margin: 0;
   padding: 0;
   font-family: "Poppins", sans-serif;
 }
 
-/* html {
-  font-size: 62.5%;
-} */
+/* Header Navbar Section */
 
 .header .navbar {
   height: 120px;
@@ -17,36 +17,32 @@
 
 .header .navbar nav {
   padding-top: 20px;
-  /* border: 5px solid black; */
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
 .header .navbar h1 {
-  /* border: 5px solid black; */
   font-size: 42px;
   font-weight: 900;
   background-color: #fff;
   color: #e63946;
-
   margin-left: 40px;
 }
 
 .header .navbar ul {
   width: 50%;
-  /* border: 5px solid black; */
   list-style: none;
   display: flex;
   align-items: center;
   justify-content: space-evenly;
-
   padding: 20px;
-
   font-size: 24px;
   font-weight: 900;
   color: #fff;
 }
+
+/* Hero Section */
 
 .hero {
   height: 100vh;
@@ -55,7 +51,6 @@
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-  /* flex-wrap: wrap; */
 }
 
 .hero .hero-title {
@@ -69,9 +64,7 @@
   display: flex;
   flex-wrap: wrap;
   font-size: 24px;
-
   width: 50%;
-  /* text-align: left; */
   margin-left: 100px;
 }
 
@@ -80,6 +73,8 @@
   width: 100%;
   text-align: center;
 }
+
+/* Loan Calculator Section */
 
 .loan-calculator {
   font-family: "Roboto", sans-serif;
@@ -129,7 +124,6 @@
 }
 
 .loan-calculator .result .left {
-  /* border: 5px solid red; */
   width: 100%;
   padding: 8px 32px;
 }
@@ -171,6 +165,8 @@
   /* border: 5px solid red; */
   width: 50%;
 }
+
+/* Footer Section */
 
 footer {
   color: #fff;
@@ -217,6 +213,8 @@ footer .social-media button {
   border: none;
 }
 
+/* Media Queries for Responsiveness */
+
 @media (max-width: 650px) {
   .header .navbar {
     height: auto;
@@ -247,7 +245,6 @@ footer .social-media button {
   }
 
   .hero {
-    width: fit-content;
     height: auto;
     padding: 20px;
     background: url(/Images/—Pngtree—bank\ guarantee\ poster\ background\ material_1036339.jpg);

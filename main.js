@@ -1,23 +1,24 @@
-// alert("Is this page linked??");
+// Selecting the Input Fields
 
 const loanAmountInput = document.querySelector(".loan-amount");
 const interestRateInput = document.querySelector(".interest-rate");
 const loanTenureInput = document.querySelector(".loan-tenure");
 
+// Fetching the values from the Input Fields
+
 const loanEMIValue = document.querySelector(".loan-emi .value");
 const totalInterestValue = document.querySelector(".total-interest .value");
 const totalAmountValue = document.querySelector(".total-amount .value");
 
-console.log;
+//Fetching Calculate Button
 
 const calculateBtn = document.querySelector(".calculate-btn");
 
 let loanAmount = parseFloat(loanAmountInput.value);
 let interestRate = parseFloat(interestRateInput.value);
 let loanTenure = parseFloat(loanTenureInput.value);
-// console.log(loanAmount);
-// console.log(interestRate);
-// console.log(loanTenure);
+
+// Formula and Calculation Part
 
 // E = P * r * ( (1 + r)^n / ( (1 + r)^n - 1 ) )
 
@@ -29,6 +30,8 @@ let loanTenure = parseFloat(loanTenureInput.value);
 let interest = interestRate / 12 / 100;
 let myChart;
 
+// For Input Validation
+
 const checkValues = () => {
   let loanAmountValue = loanAmountInput.value;
   let interestRateValue = interestRateInput.value;
@@ -39,16 +42,21 @@ const checkValues = () => {
 
   if (!loanAmountValue.match(regexNumber)) {
     loanAmountInput.value = "10000";
+    refreshInputValues();
   }
 
   if (!loanTenureValue.match(regexNumber)) {
     loanTenureInput.value = 12;
+    refreshInputValues();
   }
 
   if (!interestRateValue.match(regexDecimalNumber)) {
     interestRateInput.value = 7.5;
+    refreshInputValues();
   }
 };
+
+// Fetching the Chart From CDN to display
 
 const displayChart = (totalInterestPayableValue) => {
   const ctx = document.getElementById("myChart");
@@ -68,15 +76,23 @@ const displayChart = (totalInterestPayableValue) => {
   });
 };
 
+// Updating the Chart in real time
+
 const updateChart = (totalInterestPayableValue) => {
   myChart.data.datasets[0].data[0] = totalInterestPayableValue;
   myChart.data.datasets[0].data[1] = loanAmount;
   myChart.update();
 };
 
+// Calculating Actual Output
+
 const calculateEMI = () => {
   refreshInputValues();
   checkValues();
+  console.log(loanAmount);
+  console.log(interest);
+  console.log(loanTenure);
+  console.log(loanAmount);
   let emi =
     loanAmount *
     interest *
@@ -85,6 +101,8 @@ const calculateEMI = () => {
 
   return emi;
 };
+
+// Updating Values and Displaying it on the Page
 
 const updateData = (emi) => {
   loanEMIValue.innerHTML = Math.round(emi);
@@ -102,6 +120,8 @@ const updateData = (emi) => {
   }
 };
 
+// Refreshing the input values ion real time
+
 const refreshInputValues = () => {
   loanAmount = parseFloat(loanAmountInput.value);
   interestRate = parseFloat(interestRateInput.value);
@@ -109,11 +129,15 @@ const refreshInputValues = () => {
   interest = interestRate / 12 / 100;
 };
 
+// Initializing the whole process
+
 const init = () => {
   let emi = calculateEMI();
   updateData(emi);
 };
 
 init();
+
+// Event Listener for the Button
 
 calculateBtn.addEventListener("click", init);
