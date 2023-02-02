@@ -89,10 +89,7 @@ const updateChart = (totalInterestPayableValue) => {
 const calculateEMI = () => {
   refreshInputValues();
   checkValues();
-  console.log(loanAmount);
-  console.log(interest);
-  console.log(loanTenure);
-  console.log(loanAmount);
+
   let emi =
     loanAmount *
     interest *
