@@ -46,7 +46,7 @@
 
 .hero {
   height: 100vh;
-  background: url("/Images/Hero.jpg");
+  background: url("Images/Hero.jpg");
   background-size: cover;
   display: flex;
   flex-direction: column;
@@ -246,7 +246,7 @@ footer .social-media button {
   .hero {
     height: auto;
     padding: 20px;
-    background: url(/Images/—Pngtree—bank\ guarantee\ poster\ background\ material_1036339.jpg);
+    background: url(Images/—Pngtree—bank\ guarantee\ poster\ background\ material_1036339.jpg);
     background-size: cover;
     background-repeat: no-repeat;
   }
