@@ -48,21 +48,24 @@
           <div class="group">
             <div class="title">Amount</div>
             <input type="text" class="loan-amount" value="" placeholder="0" required />
+            <div class="error" id="e1"></div>
           </div>
 
           <div class="group">
             <div class="title">Interest Rate</div>
             <input type="text" class="interest-rate" value="" placeholder="0" required/>
+            <div class="error" id="e2"></div>
           </div>
 
           <div class="group">
             <div class="title">Tenure (In Months)</div>
             <input type="text" class="loan-tenure" value="" placeholder="0" required/>
+            <div class="error" id="e3"></div>
           </div>
         </form>
       </div>
       <div class="result">
-        <div class="left">
+        <div class="left" id="lft">
           <!-- <div class="loan-emi">
             <h3>Loan EMI</h3>
             <div class="value">123/div>
@@ -77,13 +80,12 @@
             <h3>Total Amount</h3>
             <div class="value">12345</div>
           </div> -->
-
-          <button class="calculate-btn">Calculate</button>
         </div>
       </div>
       <!-- <div class="right">
         <canvas id="myChart" width="400" height="400"></canvas>
       </div> -->
+      <center><button class="calculate-btn">Calculate</button></section></center>>
     </section>
 
     <!-- Footer Section -->
@@ -116,5 +118,6 @@
       src="https://cdn.jsdelivr.net/npm/chart.js/dist/chart.umd.min.js"
     ></script>
     <script src="main.js"></script>
+    <!-- <script src="script.js"></script> -->
   </body>
 </html>

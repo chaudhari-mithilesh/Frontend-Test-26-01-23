@@ -1,30 +1,5 @@
 // Selecting the Input Fields
 
-// document.getElementsByClassName("left").innerHTML = `
-//     <div class="loan-emi">
-//       <h3>Loan EMI</h3>
-//       <div class="value">123/div>
-//     </div>
-
-//     <div class="total-interest">
-//       <h3>Total Interest Payable</h3>
-//       <div class="value">1234</div>
-//     </div>
-
-//     <div class="total-amount">
-//       <h3>Total Amount</h3>
-//       <div class="value">12345</div>
-//     </div>
-
-//     <button class="calculate-btn">Calculate</button>
-// `;
-
-// document.getElementsByClassName("loan-calculator").innerHTML = `
-//     <div class="right">
-//       <canvas id="myChart" width="400" height="400"></canvas>
-//     </div>
-// `;
-
 const loanAmountInput = document.querySelector(".loan-amount");
 const interestRateInput = document.querySelector(".interest-rate");
 const loanTenureInput = document.querySelector(".loan-tenure");
@@ -55,80 +30,30 @@ let loanTenure = parseFloat(loanTenureInput.value);
 // r = Rate of Interest calculated on Monthly Basis
 // n = Loan Tenure
 
-function elementFromHtml(html) {
-  const template = document.createElement("template");
-
-  template.innerHTML = html.trim();
-
-  return template.content.firstElementChild;
-}
-
-const left = elementFromHtml(`
-    <div class="loan-emi">
-      <h3>Loan EMI</h3>
-      <div class="value">123/div>
-    </div>
-
-    <div class="total-interest">
-      <h3>Total Interest Payable</h3>
-      <div class="value">1234</div>
-    </div>
-
-    <div class="total-amount">
-      <h3>Total Amount</h3>
-      <div class="value">12345</div>
-    </div>
-`);
-
-console.log(left);
-
-const right = elementFromHtml(`
-    <div class="right">
-      <canvas id="myChart" width="400" height="400"></canvas>
-    </div>
-`);
-
-console.log(right);
-
 let interest = interestRate / 12 / 100;
 let myChart;
 
-// For Input Validation
-
 const checkValues = () => {
-  flag = true;
   let loanAmountValue = loanAmountInput.value;
   let interestRateValue = interestRateInput.value;
   let loanTenureValue = loanTenureInput.value;
 
   let regexNumber = /^[0-9]+$/;
-  let regexDecimalNumber = /^\d*\.?\d*$/;
+  let regexDecimalNumber = /^(\d*\.)?\d+$/;
 
   if (!loanAmountValue.match(regexNumber)) {
     err1.innerHTML = "Enter Valid Input";
-    flag = false;
-  } else {
-    err1.innerHTML = "";
   }
 
   if (!loanTenureValue.match(regexNumber)) {
-    err3.innerHTML = "Enter Valid Input";
-    flag = false;
-  } else {
-    err3.innerHTML = "";
+    loanTenureInput.value = 12;
+    refreshInputValues();
   }
 
-  // if (
-  //   !interestRateValue.match(regexDecimalNumber) ||
-  //   0 < interestRateValue <= 15
-  // ) {
-  //   err2.innerHTML = "Enter Valid Input";
-  //   flag = false;
-  // } else {
-  //   err2.innerHTML = "";
-  // }
-
-  return flag;
+  if (!interestRateValue.match(regexDecimalNumber)) {
+    interestRateInput.value = 7.5;
+    refreshInputValues();
+  }
 };
 
 // Fetching the Chart From CDN to display
@@ -200,23 +125,3 @@ const refreshInputValues = () => {
   loanTenure = parseFloat(loanTenureInput.value);
   interest = interestRate / 12 / 100;
 };
-
-// Initializing the whole process
-
-const init = () => {
-  if (checkValues()) {
-    console.log("valid");
-
-    document.getElementById("lft").appendChild(left);
-    document.getElementById("calc").appendChild(right);
-
-    let emi = calculateEMI();
-    updateData(emi);
-  }
-};
-
-// init();
-
-// Event Listener for the Button
-
-calculateBtn.addEventListener("click", init);
