@@ -41,18 +41,18 @@ const checkValues = () => {
   let regexDecimalNumber = /^(\d*\.)?\d+$/;
 
   if (!loanAmountValue.match(regexNumber)) {
-    // loanAmountInput.value = "10000";
-    // refreshInputValues();
+    loanAmountInput.value = "10000";
+    refreshInputValues();
   }
 
   if (!loanTenureValue.match(regexNumber)) {
-    // loanTenureInput.value = 12;
-    // refreshInputValues();
+    loanTenureInput.value = 12;
+    refreshInputValues();
   }
 
   if (!interestRateValue.match(regexDecimalNumber)) {
-    // interestRateInput.value = 7.5;
-    // refreshInputValues();
+    interestRateInput.value = 7.5;
+    refreshInputValues();
   }
 };
 
