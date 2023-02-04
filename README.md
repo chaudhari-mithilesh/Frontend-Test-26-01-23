@@ -1,1 +1,1 @@
-## This Branch has been created ofr making Loanscan Output Dynamic.
+## This Branch has been created for making Loanscan Output Dynamic.
