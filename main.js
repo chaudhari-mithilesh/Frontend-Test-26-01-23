@@ -1,42 +1,21 @@
 // Selecting the Input Fields
 
-// document.getElementsByClassName("left").innerHTML = `
-//     <div class="loan-emi">
-//       <h3>Loan EMI</h3>
-//       <div class="value">123/div>
-//     </div>
-
-//     <div class="total-interest">
-//       <h3>Total Interest Payable</h3>
-//       <div class="value">1234</div>
-//     </div>
-
-//     <div class="total-amount">
-//       <h3>Total Amount</h3>
-//       <div class="value">12345</div>
-//     </div>
-
-//     <button class="calculate-btn">Calculate</button>
-// `;
-
-// document.getElementsByClassName("loan-calculator").innerHTML = `
-//     <div class="right">
-//       <canvas id="myChart" width="400" height="400"></canvas>
-//     </div>
-// `;
-
 const loanAmountInput = document.querySelector(".loan-amount");
 const interestRateInput = document.querySelector(".interest-rate");
 const loanTenureInput = document.querySelector(".loan-tenure");
 const err1 = document.getElementById("e1");
 const err2 = document.getElementById("e2");
 const err3 = document.getElementById("e3");
+let loanEMIValue;
+let totalInterestValue;
+let totalAmountValue;
 
 // Fetching the values from the Input Fields
-
-const loanEMIValue = document.querySelector(".loan-emi .value");
-const totalInterestValue = document.querySelector(".total-interest .value");
-const totalAmountValue = document.querySelector(".total-amount .value");
+function fetchValues() {
+  loanEMIValue = document.querySctor(".loan-emi .value");
+  totalInterestValue = document.querySelector(".total-interest .value");
+  totalAmountValue = document.querySelector(".total-amount .value");
+}
 
 //Fetching Calculate Button
 
@@ -63,29 +42,41 @@ function elementFromHtml(html) {
   return template.content.firstElementChild;
 }
 
-const left = elementFromHtml(`
+const ansLoanEmi = elementFromHtml(`
     <div class="loan-emi">
       <h3>Loan EMI</h3>
-      <div class="value">123/div>
-    </div>
-
-    <div class="total-interest">
-      <h3>Total Interest Payable</h3>
-      <div class="value">1234</div>
-    </div>
-
-    <div class="total-amount">
-      <h3>Total Amount</h3>
-      <div class="value">12345</div>
+      <div class="value"></div>
     </div>
 `);
 
-console.log(left);
+const ansInterest = elementFromHtml(`
+    <div class="total-interest">
+      <h3>Total Interest Payable</h3>
+      <div class="value"></div>
+    </div>
+`);
+
+const ansTotalAmount = elementFromHtml(`
+    <div class="total-amount">
+      <h3>Total Amount</h3>
+      <div class="value"></div>
+    </div>
+`);
+
+const ansLoanEmi2 = elementFromHtml(`
+    <div class="loan-emi">
+      <h3>Loan EMI</h3>
+      <div class="value"></div>
+    </div>
+`);
+
+console.log(ansLoanEmi);
+console.log(ansInterest);
+console.log(ansTotalAmount);
+console.log(ansLoanEmi2);
 
 const right = elementFromHtml(`
-    <div class="right">
       <canvas id="myChart" width="400" height="400"></canvas>
-    </div>
 `);
 
 console.log(right);
@@ -118,15 +109,15 @@ const checkValues = () => {
     err3.innerHTML = "";
   }
 
-  // if (
-  //   !interestRateValue.match(regexDecimalNumber) ||
-  //   0 < interestRateValue <= 15
-  // ) {
-  //   err2.innerHTML = "Enter Valid Input";
-  //   flag = false;
-  // } else {
-  //   err2.innerHTML = "";
-  // }
+  if (
+    !interestRateValue.match(regexDecimalNumber) ||
+    0 > interestRateValue >= 15
+  ) {
+    err2.innerHTML = "Enter Valid Input";
+    flag = false;
+  } else {
+    err2.innerHTML = "";
+  }
 
   return flag;
 };
@@ -163,7 +154,7 @@ const updateChart = (totalInterestPayableValue) => {
 
 const calculateEMI = () => {
   refreshInputValues();
-  checkValues();
+  // checkValues();
 
   let emi =
     loanAmount *
@@ -207,8 +198,12 @@ const init = () => {
   if (checkValues()) {
     console.log("valid");
 
-    document.getElementById("lft").appendChild(left);
-    document.getElementById("calc").appendChild(right);
+    document.getElementById("lft").appendChild(ansLoanEmi2);
+    document.getElementById("lft").appendChild(ansInterest);
+    document.getElementById("lft").appendChild(ansTotalAmount);
+    document.getElementById("rght").appendChild(right);
+
+    fetchValues();
 
     let emi = calculateEMI();
     updateData(emi);
